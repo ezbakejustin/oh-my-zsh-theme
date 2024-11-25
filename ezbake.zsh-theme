@@ -3,7 +3,7 @@ setopt prompt_subst
 
 # get current branch in git repo
 function parse_git_branch() {
-  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed -n -E 's/(([A-Z]+-[0-9]*)|(master)).*/\1/p'`
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed -n -E 's/(([A-Z]+-[0-9]*)|(master)|(main)).*/\1/p'`
   if [[ -z "${BRANCH}" ]]
   then
     echo ""
